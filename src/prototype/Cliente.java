@@ -5,6 +5,8 @@
  */
 package prototype;
 
+import bridge.*;
+
 /**
  *
  * @author paulocesarmelo
@@ -13,6 +15,7 @@ public abstract class Cliente {
     
     private String nome;
     private int cod;
+    private Categoria categoria;
     
     public Cliente(){}
     
@@ -50,6 +53,30 @@ public abstract class Cliente {
         this.cod = cod;
     }
     
+    public void addCategoria(int id){
+        
+        switch(id){
+            case 1:
+                categoria = new Gold();
+                break;
+            case 2:
+                categoria = new Platinum();
+                break;
+            case 3:
+                categoria = new Diamond();
+                break;
+            case 4:
+                categoria = new Basic();
+                break;
+            default:
+                System.out.println("Categoria inválida!");
+                        
+        }
+        
+    }
     
+    public void acionarBeneficio(int id){
+        categoria.acionarBeneficio(id);
+    }
     
 }
