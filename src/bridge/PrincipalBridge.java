@@ -41,8 +41,6 @@ public class PrincipalBridge {
         
         System.out.println("\nBeneficios para o "+c3.getNome());
         c3.acionarBeneficio(0);
-      
-        
         
     }
     
