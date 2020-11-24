@@ -3,25 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package composite;
+package proxy_demo;
 
-import java.util.LinkedList;
+import java.util.HashMap;
 
 /**
  *
  * @author paulocesarmelo
  */
-public class Cesta extends Produto{
+public class YouTubeVideo implements ThirdPartyYouTubeLib {
 
-    private LinkedList<Produto> listaProd = new LinkedList<Produto>();
-    
-    public void addProduto(Produto p){
-        listaProd.add(p);
-    }
-    
     @Override
-    public void calcularPreco() {
+    public HashMap<String, Video> popularVideos() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Video getVideo(String videoId) {
+        Video video = new Video(videoId, "New Video1");
+        
+        return video;
     }
     
 }

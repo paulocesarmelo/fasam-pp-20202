@@ -13,9 +13,17 @@ public class Cliente {
     
     public static void main(String[] args) {
         
-        Cesta p = new Cesta();
+       Cesta cesta = new Cesta();
         
-       p.addProduto(new Produto());
+       cesta.addProduto(new Trufa());
+       cesta.addProduto(new Barra());
+       
+       Produto[] produtos = new Produto[5];
+       
+       produtos[0] = cesta;
+       produtos[1] = new Trufa();
+       produtos[2] = new Barra();
+       
         
     }
     
